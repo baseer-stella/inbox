@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Nest Inbox</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="src/app/inbox/inbox.component.css">
+    <style>html,body{height:100%;margin:0;background:#fff}app-inbox{display:block;height:100%}.lime{background:#7ccf00}.pink{background:#f6339a}.blue{background:#00a6f4}</style>
+  </head>
+  <body>
+    <app-inbox></app-inbox>
+    <script>
+      fetch('./src/app/inbox/inbox.component.html')
+        .then((response) => response.text())
+        .then((template) => { document.querySelector('app-inbox').innerHTML = template; });
+    </script>
+  </body>
+</html>
