@@ -5,7 +5,7 @@
   body {
     margin: var(--space-0);
     color: var(--color-base-white);
-    background-color: var(--color-base-black);
+    background-color: var(--color-base-white);
     font-family: var(--font-family-ui);
   }
 
