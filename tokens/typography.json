@@ -1,0 +1,47 @@
+{
+  "source": "https://www.figma.com/design/vARifSMoeMxyslzY3o39fd/Nest-%E2%8B%85-Styles---Variables?node-id=8668-2",
+  "fontFamilies": {
+    "sans": "Plus Jakarta Sans",
+    "ui": "Inter"
+  },
+  "fontWeights": [
+    { "key": "normal", "label": "Regular", "value": 400 },
+    { "key": "medium", "label": "Medium", "value": 500 },
+    { "key": "semibold", "label": "SemiBold", "value": 600 },
+    { "key": "bold", "label": "Bold", "value": 700 }
+  ],
+  "guideColors": {
+    "label": "#6929c4"
+  },
+  "scale": [
+    { "key": "9xl", "fontSize": 128, "lineHeights": { "normal": 128, "medium": 128, "semibold": 128, "bold": 128 } },
+    { "key": "8xl", "fontSize": 96, "lineHeights": { "normal": 96, "medium": 96, "semibold": 96, "bold": 96 } },
+    { "key": "7xl", "fontSize": 72, "lineHeights": { "normal": 72, "medium": 72, "semibold": 72, "bold": 72 } },
+    { "key": "6xl", "fontSize": 60, "lineHeights": { "normal": 60, "medium": 60, "semibold": 60, "bold": 60 } },
+    { "key": "5xl", "fontSize": 48, "lineHeights": { "normal": 52, "medium": 52, "semibold": 48, "bold": 52 } },
+    { "key": "4xl", "fontSize": 36, "lineHeights": { "normal": 40, "medium": 40, "semibold": 40, "bold": 40 } },
+    { "key": "3xl", "fontSize": 30, "lineHeights": { "normal": 36, "medium": 36, "semibold": 36, "bold": 36 } },
+    { "key": "2xl", "fontSize": 24, "lineHeights": { "normal": 32, "medium": 32, "semibold": 32, "bold": 32 } },
+    { "key": "xl", "fontSize": 20, "lineHeights": { "normal": 28, "medium": 28, "semibold": 28, "bold": 28 } },
+    { "key": "lg", "fontSize": 18, "lineHeights": { "normal": 28, "medium": 28, "semibold": 28, "bold": 28 } },
+    { "key": "base", "fontSize": 16, "lineHeights": { "normal": 24, "medium": 24, "semibold": 24, "bold": 24 } },
+    { "key": "sm", "fontSize": 14, "lineHeights": { "normal": 20, "medium": 20, "semibold": 20, "bold": 20 } },
+    { "key": "xs", "fontSize": 12, "lineHeights": { "normal": 16, "medium": 16, "semibold": 16, "bold": 16 } },
+    { "key": "xxs", "fontSize": 10, "lineHeights": { "normal": 12, "medium": 12, "semibold": 12, "bold": 12 } }
+  ],
+  "guideStyles": {
+    "title": { "fontFamily": "ui", "fontSize": 68, "lineHeight": "normal", "fontWeight": "medium" },
+    "section": { "fontFamily": "ui", "fontSize": 36, "lineHeight": "normal", "fontWeight": "medium" },
+    "label": { "fontFamily": "ui", "fontSize": 18, "lineHeight": "normal", "fontWeight": "medium" },
+    "metadata": { "fontFamily": "ui", "fontSize": 14, "lineHeight": "normal", "fontWeight": "normal" }
+  },
+  "guideLayout": {
+    "pagePadding": 64,
+    "pageGap": 64,
+    "sectionGap": 32,
+    "rowGap": 48,
+    "labelColumn": 140,
+    "metadataColumn": 250,
+    "sampleColumn": "1fr"
+  }
+}

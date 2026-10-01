@@ -1,0 +1,150 @@
+﻿.inbox-conversation {
+  display: flex;
+  flex: 1 1 0%;
+  min-width: 0;
+  height: 100vh;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.inbox-conversation__header {
+  display: flex;
+  flex: 0 0 auto;
+  min-height: var(--space-16);
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  border-bottom-width: var(--space-px);
+  border-bottom-style: solid;
+  padding: var(--space-2-5) var(--space-4);
+}
+
+.inbox-conversation__identity,
+.inbox-conversation__header-actions,
+.inbox-conversation__metadata,
+.inbox-conversation__message-row,
+.inbox-conversation__composer-footer,
+.inbox-conversation__send-group {
+  display: flex;
+  align-items: center;
+}
+
+.inbox-conversation__identity { min-width: 0; gap: var(--space-3); }
+.inbox-conversation__avatar { display: grid; flex: 0 0 var(--space-10); width: var(--space-10); height: var(--space-10); place-items: center; border-radius: var(--radius-full); }
+.inbox-conversation__heading { min-width: 0; }
+.inbox-conversation__heading h2 { margin: 0; }
+.inbox-conversation__metadata { gap: var(--space-2); margin-top: var(--space-1); }
+.inbox-conversation__header-actions { flex: 0 0 auto; gap: var(--space-2); }
+.inbox-conversation__icon-button { display: grid; width: var(--space-8); height: var(--space-8); place-items: center; border: 0; border-radius: var(--radius-lg); background: transparent; cursor: pointer; }
+.inbox-conversation__icon-button:hover, .inbox-conversation__reply:hover { background: var(--color-semantic-background-tertiary); }
+.inbox-conversation__icon-button svg, .inbox-conversation__reply svg, .inbox-conversation__send-menu svg { width: var(--space-5); height: var(--space-5); fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+
+.inbox-conversation__timeline { display: flex; flex: 1 1 0%; min-height: 0; flex-direction: column; gap: var(--space-4); overflow-y: auto; padding: var(--space-4) var(--space-6); }
+.inbox-conversation__history { align-self: center; padding: var(--space-1-5) var(--space-3); border-radius: var(--radius-full); background: var(--color-semantic-background-secondary); }
+.inbox-conversation__date { display: flex; align-items: center; gap: var(--space-3); }
+.inbox-conversation__date::before, .inbox-conversation__date::after { height: var(--space-px); flex: 1; background: var(--color-semantic-stroke-lighter); content: ""; }
+.inbox-conversation__message { display: flex; max-width: 78%; flex-direction: column; align-self: flex-start; gap: var(--space-1); }
+.inbox-conversation__message.is-agent { align-self: flex-end; }
+.inbox-conversation__message.is-grouped { margin-top: calc(var(--space-4) - var(--space-3)); }
+.inbox-conversation__message-meta { padding-inline: var(--space-2); }
+.inbox-conversation__message-row { gap: var(--space-2); }
+.inbox-conversation__message.is-agent .inbox-conversation__message-row { flex-direction: row-reverse; }
+.inbox-conversation__bubble { width: fit-content; max-width: 100%; border-radius: var(--radius-xl); background: var(--color-semantic-background-secondary); padding: var(--space-3) var(--space-4); white-space: pre-wrap; overflow-wrap: anywhere; }
+.inbox-conversation__message.is-agent .inbox-conversation__bubble { background: var(--color-semantic-background-brand-secondary); }
+.inbox-conversation__time { flex: 0 0 auto; align-self: flex-end; opacity: 0; }
+.inbox-conversation__message-row:hover .inbox-conversation__time { opacity: 1; }
+.inbox-conversation__reply { display: grid; width: var(--space-7); height: var(--space-7); flex: 0 0 auto; place-items: center; border: 0; border-radius: var(--radius-md); background: transparent; color: inherit; cursor: pointer; opacity: 0; }
+.inbox-conversation__message-row:hover .inbox-conversation__reply, .inbox-conversation__reply:focus-visible { opacity: 1; }
+.inbox-conversation__delivery { align-self: flex-end; padding-inline: var(--space-2); }
+.inbox-conversation__event { align-self: center; padding: var(--space-2) var(--space-3); border-radius: var(--radius-lg); background: var(--color-semantic-background-secondary); }
+.inbox-conversation__event.is-note { border: var(--space-px) solid var(--color-semantic-stroke-accent-yellow-primary); background: var(--color-semantic-background-accent-yellow-primary); }
+.inbox-conversation__event time { margin-left: var(--space-2); }
+.inbox-conversation__new-marker { display: flex; align-items: center; gap: var(--space-3); color: var(--color-semantic-foreground-brand-primary); }
+.inbox-conversation__new-marker::before, .inbox-conversation__new-marker::after { height: var(--space-px); flex: 1; background: var(--color-semantic-stroke-brand-primary); content: ""; }
+
+.inbox-conversation__composer { flex: 0 0 auto; padding: 0 var(--space-3) var(--space-3); background: var(--color-semantic-background-primary); }
+.inbox-composer__field { position: relative; overflow: visible; border: var(--space-px) solid var(--color-semantic-stroke-lighter); border-radius: var(--radius-xl); background: var(--color-semantic-background-primary); }
+.inbox-composer__field:focus-within { border-color: var(--color-semantic-stroke-brand-quaternary); }
+.inbox-composer__section { display: flex; flex-direction: column; gap: var(--space-1-5); padding: var(--space-2-5); }
+.inbox-composer__top-row { display: flex; min-height: var(--space-6); align-items: center; justify-content: space-between; }
+.inbox-composer__mode-switch { display: flex; align-items: flex-start; gap: var(--space-0-5); border-radius: var(--radius-full); background: var(--color-semantic-background-tertiary); padding: var(--space-0-5); }
+.inbox-composer__mode-option { display: inline-flex; min-height: var(--space-6); align-items: center; justify-content: center; gap: var(--space-1); border: 0; border-radius: var(--radius-full); background: transparent; padding: var(--space-1) var(--space-2-5); color: var(--color-component-text-quaternary); white-space: nowrap; cursor: pointer; }
+.inbox-composer__mode-option img { display: block; flex: 0 0 auto; }
+.inbox-composer__mode-option.is-active { background: var(--color-semantic-background-primary); color: var(--color-component-text-primary); }
+.inbox-composer__mode-option.is-active.is-note { color: var(--color-component-text-accent-yellow-darker); }
+.inbox-composer__mode-option:hover:not(.is-active) { background: var(--color-semantic-background-secondary); }
+.inbox-composer__email-options { display: flex; align-items: center; gap: var(--space-2); }
+.inbox-composer__email-options > button { display: inline-flex; min-height: var(--space-8); align-items: center; justify-content: center; border: 0; border-radius: var(--radius-lg); background: transparent; padding-inline: var(--space-2-5); color: var(--color-component-text-quaternary); cursor: pointer; }
+.inbox-composer__email-options > button:hover, .inbox-composer__email-options > button.is-active { background: var(--color-semantic-background-tertiary); color: var(--color-component-text-primary); }
+.inbox-composer__email-options > button:focus-visible, .inbox-composer__email-clear:focus-visible, .inbox-composer__email-chip:focus-visible, .inbox-composer__email-chip button:focus-visible { outline: var(--space-px) solid var(--color-semantic-stroke-brand-contrast); outline-offset: var(--space-px); }
+.inbox-composer__email-options > span { width: var(--space-px); height: var(--space-6); background: var(--color-semantic-stroke-lighter); }
+.inbox-composer__email-options > .inbox-composer__email-clear { display: grid; width: var(--space-8); padding: 0; place-items: center; }
+.inbox-composer__email-clear img { display: block; }
+.inbox-composer__email-fields { display: flex; flex-direction: column; padding-inline: var(--space-3-5); }
+.inbox-composer__email-row { display: flex; min-height: calc(var(--space-11) + var(--space-px)); align-items: center; gap: var(--space-2); border-bottom: var(--space-px) solid var(--color-semantic-stroke-lighter); padding: var(--space-2-5) var(--space-0-5); }
+.inbox-composer__email-row > span:first-child { width: var(--space-12); flex: 0 0 auto; color: var(--color-component-text-tertiary); }
+.inbox-composer__email-row > input { min-width: 0; flex: 1; border: 0; outline: 0; background: transparent; color: var(--color-component-text-primary); }
+.inbox-composer__email-row > input::placeholder { color: var(--color-component-text-quaternary); }
+.inbox-composer__email-chip { display: inline-flex; min-height: var(--space-6); align-items: center; gap: var(--space-1); border: 0; border-radius: var(--radius-full); background: var(--color-semantic-background-tertiary); padding: var(--space-1) var(--space-2); color: var(--color-component-text-primary); }
+.inbox-composer__email-chip.is-sender { background: var(--color-semantic-background-accent-blue-secondary); }
+.inbox-composer__email-chip.is-sender { color: var(--color-component-text-accent-blue-darker); }
+.inbox-composer__email-chip svg { width: var(--space-4); height: var(--space-4); fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+.inbox-composer__email-chip button { display: grid; width: var(--space-4); height: var(--space-4); place-items: center; border: 0; background: transparent; padding: 0; cursor: pointer; }
+.inbox-composer__email-chip button img { display: block; }
+.inbox-composer__send-as-row { position: relative; }
+.inbox-composer__email-sendas-menu { position: absolute; z-index: 4; top: calc(100% - var(--space-px)); left: var(--space-12); display: flex; min-width: var(--space-48); flex-direction: column; border: var(--space-px) solid var(--color-semantic-stroke-lighter); border-radius: var(--radius-lg); padding: var(--space-1); }
+.inbox-composer__email-sendas-menu button { border: 0; border-radius: var(--radius-md); background: transparent; padding: var(--space-2) var(--space-3); color: var(--color-component-text-primary); text-align: left; cursor: pointer; }
+.inbox-composer__email-sendas-menu button:hover { background: var(--color-semantic-background-tertiary); }
+.inbox-composer__input-wrap { padding: var(--space-2) 0 0 var(--space-2); }
+.inbox-composer__draft { min-height: var(--space-5); max-height: calc(var(--space-40) + var(--space-2)); overflow: auto; border: 0; outline: 0; white-space: pre-wrap; overflow-wrap: anywhere; }
+.inbox-composer__draft:empty::before { color: var(--color-component-text-quaternary); content: attr(data-placeholder); pointer-events: none; }
+.inbox-composer__tools-container { position: relative; display: flex; flex-direction: column; gap: var(--space-1); }
+.inbox-composer__tools-row { display: flex; min-height: var(--space-8); align-items: center; justify-content: space-between; gap: var(--space-2); }
+.inbox-composer__tool-buttons { display: flex; align-items: center; gap: var(--space-0-5); }
+.inbox-composer__tool-button { display: grid; width: var(--space-8); height: var(--space-8); flex: 0 0 auto; place-items: center; border: 0; border-radius: var(--radius-lg); background: transparent; cursor: pointer; }
+.inbox-composer__tool-button:hover:not(:disabled), .inbox-composer__tool-button:focus-visible { background: var(--color-semantic-background-tertiary); }
+.inbox-composer__mode-option:focus-visible, .inbox-composer__tool-button:focus-visible, .inbox-composer__send:focus-visible, .inbox-composer__send-menu:focus-visible, .inbox-composer__attachment > button:focus-visible, .inbox-composer__reply-close:focus-visible { outline: var(--space-px) solid var(--color-semantic-stroke-brand-contrast); outline-offset: var(--space-px); }
+.inbox-composer__mode-option:active:not(.is-active), .inbox-composer__tool-button:active:not(:disabled) { background: var(--color-semantic-background-quaternary); }
+.inbox-composer__tool-button:disabled { color: var(--color-component-text-disabled); cursor: not-allowed; }
+.inbox-composer__tool-button img, .inbox-composer__mode-option img, .inbox-composer__send img, .inbox-composer__send-menu img { display: block; flex: 0 0 auto; }
+.inbox-composer__file-input { display: none; }
+.inbox-composer__send-group { display: flex; flex: 0 0 auto; align-items: center; gap: var(--space-1-5); }
+.inbox-composer__send { display: inline-flex; min-height: var(--space-8); align-items: center; justify-content: center; gap: var(--space-2); border: var(--space-px) solid var(--color-semantic-stroke-lighter); border-radius: var(--radius-lg); background: var(--color-semantic-background-tertiary); padding: 0 var(--space-2-5); color: var(--color-component-text-disabled); white-space: nowrap; cursor: not-allowed; }
+.inbox-composer__send:not(:disabled) { border-color: var(--color-semantic-background-brand-contrast); background: var(--color-semantic-background-brand-contrast); color: var(--color-component-text-inverse); cursor: pointer; }
+.inbox-composer__send:not(:disabled):hover { background: var(--color-semantic-background-brand-hover); }
+.inbox-composer__send-menu-wrap { position: relative; }
+.inbox-composer__send-menu { display: grid; width: var(--space-8); height: var(--space-8); place-items: center; border: var(--space-px) solid var(--color-semantic-stroke-lighter); border-radius: var(--radius-lg); background: var(--color-semantic-background-tertiary); cursor: pointer; }
+.inbox-composer__send-menu:hover, .inbox-composer__send-menu[aria-expanded="true"] { background: var(--color-semantic-background-quaternary); }
+.inbox-composer__send-menu-list { position: absolute; z-index: 5; right: 0; bottom: calc(100% + var(--space-2)); display: flex; width: var(--space-48); flex-direction: column; border: var(--space-px) solid var(--color-semantic-stroke-lighter); border-radius: var(--radius-lg); padding: var(--space-1); }
+.inbox-composer__send-menu-list button, .inbox-composer__template-menu button { border: 0; border-radius: var(--radius-md); background: transparent; padding: var(--space-2) var(--space-3); color: var(--color-component-text-primary); text-align: left; cursor: pointer; }
+.inbox-composer__send-menu-list button:hover, .inbox-composer__template-menu button:hover { background: var(--color-semantic-background-tertiary); }
+.inbox-composer__popover { position: absolute; z-index: 6; bottom: calc(100% + var(--space-2)); display: flex; border: var(--space-px) solid var(--color-semantic-stroke-lighter); border-radius: var(--radius-lg); padding: var(--space-1); }
+.inbox-composer__format-menu { left: 0; gap: var(--space-1); }
+.inbox-composer__format-menu button, .inbox-composer__emoji-menu button { display: grid; width: var(--space-8); height: var(--space-8); place-items: center; border: 0; border-radius: var(--radius-md); background: transparent; color: var(--color-component-text-primary); cursor: pointer; }
+.inbox-composer__format-menu button:hover, .inbox-composer__emoji-menu button:hover { background: var(--color-semantic-background-tertiary); }
+.inbox-composer__format-menu svg { width: var(--space-4); height: var(--space-4); fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+.inbox-composer__emoji-menu { left: var(--space-10); width: calc(var(--space-48) + var(--space-32)); flex-direction: column; gap: var(--space-2); }
+.inbox-composer__emoji-search { width: 100%; height: var(--space-8); border: var(--space-px) solid var(--color-semantic-stroke-lighter); border-radius: var(--radius-lg); padding-inline: var(--space-2); color: var(--color-component-text-primary); outline: 0; }
+.inbox-composer__emoji-search:focus { border-color: var(--color-semantic-stroke-brand-quaternary); }
+.inbox-composer__emoji-categories { display: flex; gap: var(--space-1); overflow-x: auto; }
+.inbox-composer__emoji-categories button { border: 0; border-radius: var(--radius-md); background: transparent; padding: var(--space-1) var(--space-2); color: var(--color-component-text-secondary); cursor: pointer; }
+.inbox-composer__emoji-categories button.is-active, .inbox-composer__emoji-categories button:hover { background: var(--color-semantic-background-tertiary); color: var(--color-component-text-primary); }
+.inbox-composer__emoji-grid { display: grid; max-height: calc(var(--space-40) + var(--space-8)); grid-template-columns: repeat(8, var(--space-8)); overflow-y: auto; }
+.inbox-composer__template-menu { left: calc(var(--space-10) + var(--space-8)); width: var(--space-48); flex-direction: column; gap: var(--space-1); }
+.inbox-composer__template-menu > strong { padding: var(--space-2) var(--space-3); }
+.inbox-composer__attachments { display: flex; flex-wrap: wrap; gap: var(--space-2); padding: var(--space-1) var(--space-2); }
+.inbox-composer__attachment { display: flex; max-width: 100%; align-items: center; gap: var(--space-2); border: var(--space-px) solid var(--color-semantic-stroke-lighter); border-radius: var(--radius-lg); background: var(--color-semantic-background-secondary); padding: var(--space-1-5) var(--space-2); }
+.inbox-composer__file-icon { display: grid; flex: 0 0 auto; place-items: center; }
+.inbox-composer__file-icon svg, .inbox-composer__reply-icon svg { width: var(--space-4); height: var(--space-4); fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+.inbox-composer__file-name { max-width: var(--space-40); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.inbox-composer__file-state { color: var(--color-component-text-tertiary); }
+.inbox-composer__file-state.is-failed { color: var(--color-component-text-accent-red); }
+.inbox-composer__attachment > button, .inbox-composer__reply-close { display: grid; width: var(--space-6); height: var(--space-6); flex: 0 0 auto; place-items: center; border: 0; border-radius: var(--radius-md); background: transparent; color: var(--color-component-text-secondary); cursor: pointer; }
+.inbox-composer__attachment > button:hover, .inbox-composer__reply-close:hover { background: var(--color-semantic-background-tertiary); }
+.inbox-composer__replying { display: flex; align-items: center; gap: var(--space-2); border-left: var(--space-0-5) solid var(--color-semantic-stroke-brand-primary); background: var(--color-semantic-background-secondary); padding: var(--space-2); }
+.inbox-composer__reply-icon { display: grid; flex: 0 0 auto; place-items: center; color: var(--color-component-text-secondary); }
+.inbox-composer__reply-content { display: flex; min-width: 0; flex: 1; flex-direction: column; gap: var(--space-0-5); }
+.inbox-composer__reply-content > span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.inbox-composer__reply-close { font-size: var(--space-5); }
+.inbox-composer__error { margin: 0; color: var(--color-component-text-accent-red); }
+
