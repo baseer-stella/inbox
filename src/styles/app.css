@@ -31,6 +31,7 @@
   overflow: hidden;
   border-right-width: var(--space-px);
   border-right-style: solid;
+  border-color: var(--color-semantic-stroke-lighter);
 }
 
 .inbox-nav__layout {
